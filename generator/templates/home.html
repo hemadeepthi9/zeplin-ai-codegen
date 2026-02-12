@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+  {% csrf_token %}
+  <input name="url" style="width:600px" placeholder="Paste Zeplin screen URL">
+  <button>Generate Code</button>
+</form>
+
+{% if done %}
+<h3>Generated!</h3>
+<p>Check output/ folder</p>
+{% endif %}
+</body>
+</html>
+
+
+

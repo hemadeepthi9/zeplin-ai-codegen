@@ -1,0 +1,196 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7F97F2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 1200px;
+            height: 80vh;
+            display: flex;
+            border-radius: 5px
+        }
+
+        .left-side {
+            background-color: #BDD0FF;
+            padding: 20px;
+            width: 40%;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .right-side {
+            padding: 20px;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .site-text {
+            padding: 20px;
+        }
+        
+        .site-logo {
+            width: 200px;
+            height: 200px;
+            background-color: #BDD0FF;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            position: relative;
+        }
+        
+        .site-logo .s {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 150px;
+            color: white;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: 1px solid #BDD0FF;
+            border-radius: 5px;
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            width: 80%;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        
+        .decorative-line{
+            display: flex;
+            width: 80%;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .decorative-line:before,
+        .decorative-line:after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+            margin: auto 10px;
+        }
+
+        .submit-button {
+            background-color: #7F97F2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        
+        .login {
+            margin-top: 10px;   
+        }
+        
+        .login a {
+            color: #7F97F2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 95%;
+                height: auto;
+            }
+
+            .left-side,
+            .right-side {
+                width: 100%;
+            }
+
+            .left-side {
+                border-radius: 5px 5px 0 0;
+            }
+
+            .right-side {
+                border-radius: 0 0 5px 5px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="site-text">
+                <h1>Need webdesign for your business?</h1>
+                <h1><b>Design Spacee</b> will help you.</h1>
+            </div>
+            <div class="site-logo">
+                <span class="s">S</span>
+            </div>
+            <div>
+                <p>figma.com/@designspacee</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <h1>Create Account</h1>
+            <a href="#" class="button">Sign up with Google</a>
+            <a href="#" class="button">Sign up with Facebook</a>
+            <div class="decorative-line">
+                <span>OR</span>
+            </div>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" />
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" />
+                </div>
+                <button type="submit" class="submit-button">Create Account</button>
+            </form>
+            <div class="login">
+                Already have an account? <a href="#">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
