@@ -1,9 +1,9 @@
-import requests
+import requests # type: ignore
 import base64
 import os
 
 
-OPENROUTER_KEY = "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"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 
 def generate_code(image_path, mode="html"):
