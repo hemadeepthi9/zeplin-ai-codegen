@@ -1,11 +1,12 @@
 import base64
-import requests
+import os
 from pathlib import Path
+import requests # type: ignore
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 IMAGE_PATH = BASE_DIR / "screen.png"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-OPENROUTER_API_KEY = "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"
 
 
 def generate_from_image(image_path=IMAGE_PATH):
