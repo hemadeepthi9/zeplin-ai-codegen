@@ -38,4 +38,11 @@ def generate_from_image(image_path=IMAGE_PATH):
         headers=headers
     )
 
-    return res.json()["choices"][0]["message"]["content"]
+    
+    raw = res["choices"][0]["message"]["content"]
+
+
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+
+    return raw.strip()

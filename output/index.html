@@ -2,195 +2,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #7F97F2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Team Color Styles</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row; /* Modified for side-by-side layout */
+      /* justify-content: center; */
+      align-items: flex-start;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
 
-        .container {
-            background-color: white;
-            width: 80%;
-            max-width: 1200px;
-            height: 80vh;
-            display: flex;
-            border-radius: 5px
-        }
+    .left-section {
+      width: 50%; /* Adjusted width */
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .left-side {
-            background-color: #BDD0FF;
-            padding: 20px;
-            width: 40%;
-            border-radius: 5px 0 0 5px;
-        }
+    .right-section {
+      width: 50%; /* Adjusted width */
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #007bff;
+    }
+   
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
 
-        .right-side {
-            padding: 20px;
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .site-text {
-            padding: 20px;
-        }
-        
-        .site-logo {
-            width: 200px;
-            height: 200px;
-            background-color: #BDD0FF;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            position: relative;
-        }
-        
-        .site-logo .s {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 150px;
-            color: white;
-        }
+        p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
 
-        .button {
-            padding: 10px 20px;
-            border: 1px solid #BDD0FF;
-            border-radius: 5px;
-            background-color: white;
-            color: #333;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-        }
-        
-        h1 {
-            margin-bottom: 20px;
-        }
+    .layer-panel {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+    }
 
-        .form-group {
-            width: 80%;
-            margin-bottom: 15px;
-        }
+    .layer-panel-header {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      font-weight: bold;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-        
-        .decorative-line{
-            display: flex;
-            width: 80%;
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
+    .layer-panel-body {
+      padding: 10px;
+       width: 500px;
+    }
 
-        .decorative-line:before,
-        .decorative-line:after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid #ccc;
-            margin: auto 10px;
-        }
+    .layer-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
 
-        .submit-button {
-            background-color: #7F97F2;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 80%;
-            margin-bottom: 20px;
-        }
-        
-        .login {
-            margin-top: 10px;   
-        }
-        
-        .login a {
-            color: #7F97F2;
-        }
+    }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                width: 95%;
-                height: auto;
-            }
+     .layer-item:last-child {
+      border-bottom: none;
+    }
 
-            .left-side,
-            .right-side {
-                width: 100%;
-            }
+    .layer-item .layer-name {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
 
-            .left-side {
-                border-radius: 5px 5px 0 0;
-            }
+        .layer-item .layer-options {
+      display: flex;
+      align-items: center;
+    }
 
-            .right-side {
-                border-radius: 0 0 5px 5px;
-                padding: 20px;
-            }
-        }
-    </style>
+    .layer-item .layer-options select,
+    .layer-item .layer-options input {
+      margin-right: 5px;
+      padding: 3px;
+    }
+
+    .layer-group{
+       display: flex;
+       align-items: center;
+    }
+
+       .layer-group span{
+          margin-left: 5px;
+       }
+
+       .action-button {
+           display: flex;
+           justify-content: space-evenly;
+           height: 40px;
+           width: 100px;
+           border: 1px solid black;
+       }
+
+
+    .footer-item{
+        display: flex;
+        border-bottom: 1px solid #eee;
+         justify-content: space-between;
+         height: 40px;
+          padding: 5px 0;
+    }
+     .footer-item:last-child {
+      border-bottom: none;
+    }
+
+      .plus-button{
+        border: 1pt solid gray;
+        border-radius: 8px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+      }
+
+        .minus-button{
+        border: 1pt solid gray;
+        border-radius: 8px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+      }
+
+      .verticle-arrow{
+            width: 0;
+            height: 0;
+             border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+  
+            border-top: 20px solid blue;
+      }
+
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-section,
+      .right-section {
+        width: 90%;
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-side">
-            <div class="site-text">
-                <h1>Need webdesign for your business?</h1>
-                <h1><b>Design Spacee</b> will help you.</h1>
-            </div>
-            <div class="site-logo">
-                <span class="s">S</span>
-            </div>
-            <div>
-                <p>figma.com/@designspacee</p>
-            </div>
+  <div class="left-section">
+    <h1>Edit team color styles</h1>
+    <p>Published styles are shared with everyone on the team—they can be used by all team members in any of their files. Changing
+      these styles will update them everywhere they're used.</p>
+    <p>Change these default colors to your team's colors by selecting a color layer and clicking on <span style="font-size: 1.2em;">&#9883;</span> in the Design panel to the right.</p>
+
+    <div class="layer-panel">
+      <div class="layer-panel-header">Layer</div>
+      <div class="layer-panel-body">
+        <div class="layer-item">
+          <div class="layer-name">
+             <div class="layer-group">
+                <span style="font-size: 0.8em;">&#9702;</span>
+                <span>Pass through</span>
+                  <select>
+                       <option>Normal</option>
+                  </select>
+             </div>
+          </div>
+          <div class="layer-options">
+            <input type="number" value="100" style="width: 40px;"> % 
+            <span style="font-size: 0.8em">&#x1F441;</span>
+          </div>
         </div>
-        <div class="right-side">
-            <h1>Create Account</h1>
-            <a href="#" class="button">Sign up with Google</a>
-            <a href="#" class="button">Sign up with Facebook</a>
-            <div class="decorative-line">
-                <span>OR</span>
-            </div>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" />
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" />
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" />
-                </div>
-                <button type="submit" class="submit-button">Create Account</button>
-            </form>
-            <div class="login">
-                Already have an account? <a href="#">Login</a>
-            </div>
+
+        <div class="layer-item">
+          <div class="layer-name">
+              <div class="layer-group">
+                 <span style="color: fuchsia; font-size: 1.5em;">&#11044;</span>
+                 <span>Fuschia/100</span>
+              </div>
+          </div>
+          <div class="layer-options">
+              <div class="action-button">
+                <span style="font-size: 1.2em;">&#9883;</span>
+              </div>
+               <span class="minus-button">&#45;</span>
+          </div>
         </div>
+
+          <div class="footer-item">
+            <div>Stroke</div>
+            <div class="plus-button">+</div>
+          </div>
+
+             <div class="footer-item">
+            <div >Effects</div>
+            <div class="plus-button">+</div>
+          </div>
+
+           <div class="footer-item">
+            <div>Export</div>
+            <div class="plus-button">+</div>
+          </div>
+      </div>
     </div>
+  </div>
+
+  <div class="right-section">
+    <p style="font-size: 1.2em">We're published already!</p>
+    <p style="font-size: 1.2em">Edit us to be your team's colors.</p>
+    <div class="verticle-arrow"></div>
+  </div>
 </body>
 </html>
 ```
