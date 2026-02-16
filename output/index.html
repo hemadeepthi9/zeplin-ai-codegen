@@ -1,168 +1,94 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Team Color Styles</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            display: flex;
-            flex-wrap: wrap; 
-        }
-
-        .container {
-            max-width: 600px;
-            margin-right: 20px;
-            padding: 15px;
-        }
-
-        .right-panel {
-            max-width: 400px;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .layer-panel {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        .layer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .layer-section {
-            padding: 5px;
-            border-bottom: 1px solid #eee;
-        }
-        .layer-section:last-child{
-            border-bottom: none;
-        }
-
-        .layer-row {
-            display: flex;
-            align-items: center;
-            padding: 8px 0;
-        }
-
-        .layer-row > * {
-            margin-right: 10px;
-        }
-        .layer-row > *:last-child{
-            margin-right: 0;
-        }
-
-        .color-circle {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .add-button {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .right-panel h2 {
-            color: #2979FF;
-            text-align: center;
-        }
-
-        .arrow-down {
-            text-align: center;
-            font-size: 2em;
-            color: #2979FF;
-        }
-        @media (max-width: 768px) {
-            body{
-                flex-direction: column;
-            }
-            .container,
-            .right-panel{
-                max-width: 100%;
-                margin-right: 0 ;
-                margin-bottom: 20px;
-            }
-            
-        }
-
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Edit team color styles</h1>
-        <p>Published styles are shared with everyone on the team—they can be used by all team members in any of their files. Changing these styles will update them everywhere they're used.</p>
-        <p>Change these default colors to your team's colors by selecting a color layer and clicking on ↕ in the Design panel to the right.</p>
-
-        <div class="layer-panel">
-            <div class="layer-header">
-                <h3>Layer</h3>
-            </div>
-            <div class="layer-section">
-                <div class="layer-row">
-                    <span>O</span>
-                    <span>Pass through</span>
-                    <span>▼</span>
-                    <span>100%</span>
-                    <span>👁</span>
-                </div>
-            </div>
-            <div class="layer-section">
-                <div class="layer-row">
-                    <span class="color-circle" style="background-color: fuchsia;"></span>
-                    <span>Fuschia/100</span>
-                    <span>↕</span>
-                    <span>...</span>
-                    <span>-</span>
-                </div>
-            </div>
-            <div class="layer-section">
-                <div class="layer-row">
-                    <span>Stroke</span>
-                    <span class="add-button">+</span>
-                </div>
-            </div>
-            <div class="layer-section">
-                <div class="layer-row">
-                    <span>Effects</span>
-                    <span class="add-button">+</span>
-                </div>
-            </div>
-            <div class="layer-section">
-                <div class="layer-row">
-                    <span>Export</span>
-                    <span class="add-button">+</span>
-                </div>
-            </div>
+<div style="display: flex; width: 100%; gap: 24px;">
+  <div style="width: 50%;">
+    <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 16px;">Edit team color styles</h1>
+    <p style="font-size: 16px; line-height: 1.5; margin-bottom: 16px; max-width: 450px; word-wrap: break-word;">Published styles are shared with everyone on the team—they can be used by all team members in any of their files. Changing these styles will update them everywhere they're used.</p>
+    <p style="font-size: 16px; line-height: 1.5; margin-bottom: 16px; max-width: 450px; word-wrap: break-word;">Change these default colors to your team's colors by selecting a color layer and clicking on 
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <path d="M7.33333 13.4167C10.9857 13.4167 13.9167 10.4857 13.9167 6.83333C13.9167 3.18095 10.9857 0.25 7.33333 0.25C3.68095 0.25 0.75 3.18095 0.75 6.83333C0.75 10.4857 3.68095 13.4167 7.33333 13.4167Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.33333 4.91666V8.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.75 7.08334H9.91667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> in the Design panel to the right.</p>
+    <div style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+    <div style="padding: 16px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <span style="font-weight: 500; color: #333;">Layer</span>
+      </div>
+          
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10.5C8.48528 10.5 10.5 8.48528 10.5 6C10.5 3.51472 8.48528 1.5 6 1.5C3.51472 1.5 1.5 3.51472 1.5 6C1.5 8.48528 3.51472 10.5 6 10.5Z" stroke="black" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 4.125V7.875" stroke="black" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.125 6H7.875" stroke="black" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Pass through</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.5 0.75L5 5.25L9.5 0.75" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-    </div>
-
-    <div class="right-panel">
-        <h2>We're published already!
-            Edit us to be your team's colors.</h2>
-        <div class="arrow-down">
-            ↓
+        <span>100%</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 7.71429C1 7.71429 3.66667 2 8 8C3.66667 14 1 15.7143 1 15.7143" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 7.71429C15 7.71429 12.3333 2 8 8C12.3333 14 15 15.7143 15 15.7143" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 10.2857C9.24264 10.2857 10.2857 9.24264 10.2857 8C10.2857 6.75736 9.24264 5.71429 8 5.71429C6.75736 5.71429 5.71429 6.75736 5.71429 8C5.71429 9.24264 6.75736 10.2857 8 10.2857Z" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+          
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16">
+          <circle cx="8" cy="8" r="8" fill="#E62696"></circle>
+          </svg>
+          <span>Fuschia/100</span>
         </div>
+
+        <div style="display: flex; align-items:center; gap:16px">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.33333 13.4167C10.9857 13.4167 13.9167 10.4857 13.9167 6.83333C13.9167 3.18095 10.9857 0.25 7.33333 0.25C3.68095 0.25 0.75 3.18095 0.75 6.83333C0.75 10.4857 3.68095 13.4167 7.33333 13.4167Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.33333 4.91666V8.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.75 7.08334H9.91667" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+            <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1H12" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+      </div>
+      </div>
+          
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <span style="color: #666666;">Stroke</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1.16663V12.8333" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1.16663 7H12.8333" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+          
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <span style="color: #666666;">Effects</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1.16663V12.8333" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1.16663 7H12.8333" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span style="color: #666666;">Export</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.16663 7H12.8333" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+
+  <div style="width: 50%; display: flex; flex-direction: column; align-items: center;">
+    <p style="font-size: 18px; color: #1890FF; text-align: center; margin-bottom: 8px;">We're published already!</p>
+    <p style="font-size: 18px; color: #1890FF; text-align: center; margin-bottom: 24px;">Edit us to be your team's colors.</p>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4V20M12 20L18 14M12 20L6 14" stroke="#1890FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
 ```

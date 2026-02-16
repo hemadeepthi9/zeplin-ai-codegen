@@ -1,0 +1,4 @@
+Cards should have padding of at least 16px.
+Use subtle box-shadow and rounded corners (8px radius).
+Maintain vertical spacing between card items (12px).
+Cards should expand with content instead of fixed height.

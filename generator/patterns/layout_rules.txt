@@ -1,0 +1,4 @@
+Always use CSS Flexbox or Grid for layout.
+Never use absolute positioning for main UI structure.
+Maintain consistent gaps using gap property (16px to 24px).
+Ensure responsive behavior with flexible widths.

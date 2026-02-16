@@ -1,0 +1,4 @@
+Text must wrap naturally using word-wrap or overflow-wrap.
+Never allow text to overlap other elements.
+Use line-height between 1.4 and 1.6 for readability.
+Set max-width for text containers.

@@ -2,7 +2,9 @@ import os
 import requests # type: ignore
 from django.shortcuts import render # type: ignore
 from .zeplin import get_image_from_url
-from .ai import generate_code 
+from .ai import generate_from_image as generate_code
+
+from PIL import Image
 
 
 OUTPUT = "output"
