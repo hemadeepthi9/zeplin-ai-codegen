@@ -2,230 +2,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Team Color Styles</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: row; /* Modified for side-by-side layout */
-      /* justify-content: center; */
-      align-items: flex-start;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team Color Styles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap; 
+        }
 
-    .left-section {
-      width: 50%; /* Adjusted width */
-      padding: 20px;
-      box-sizing: border-box;
-    }
+        .container {
+            max-width: 600px;
+            margin-right: 20px;
+            padding: 15px;
+        }
 
-    .right-section {
-      width: 50%; /* Adjusted width */
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #007bff;
-    }
-   
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
+        .right-panel {
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
         p {
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-    .layer-panel {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 20px;
-      background-color: #f9f9f9;
-    }
+        .layer-panel {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
 
-    .layer-panel-header {
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      font-weight: bold;
-    }
+        .layer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-    .layer-panel-body {
-      padding: 10px;
-       width: 500px;
-    }
+        .layer-section {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .layer-section:last-child{
+            border-bottom: none;
+        }
 
-    .layer-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 1px solid #eee;
+        .layer-row {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+        }
 
-    }
+        .layer-row > * {
+            margin-right: 10px;
+        }
+        .layer-row > *:last-child{
+            margin-right: 0;
+        }
 
-     .layer-item:last-child {
-      border-bottom: none;
-    }
+        .color-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-    .layer-item .layer-name {
-      flex-grow: 1;
-      margin-right: 10px;
-    }
+        .add-button {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
 
-        .layer-item .layer-options {
-      display: flex;
-      align-items: center;
-    }
+        .right-panel h2 {
+            color: #2979FF;
+            text-align: center;
+        }
 
-    .layer-item .layer-options select,
-    .layer-item .layer-options input {
-      margin-right: 5px;
-      padding: 3px;
-    }
+        .arrow-down {
+            text-align: center;
+            font-size: 2em;
+            color: #2979FF;
+        }
+        @media (max-width: 768px) {
+            body{
+                flex-direction: column;
+            }
+            .container,
+            .right-panel{
+                max-width: 100%;
+                margin-right: 0 ;
+                margin-bottom: 20px;
+            }
+            
+        }
 
-    .layer-group{
-       display: flex;
-       align-items: center;
-    }
-
-       .layer-group span{
-          margin-left: 5px;
-       }
-
-       .action-button {
-           display: flex;
-           justify-content: space-evenly;
-           height: 40px;
-           width: 100px;
-           border: 1px solid black;
-       }
-
-
-    .footer-item{
-        display: flex;
-        border-bottom: 1px solid #eee;
-         justify-content: space-between;
-         height: 40px;
-          padding: 5px 0;
-    }
-     .footer-item:last-child {
-      border-bottom: none;
-    }
-
-      .plus-button{
-        border: 1pt solid gray;
-        border-radius: 8px;
-        width: 20px;
-        height: 20px;
-        text-align: center;
-      }
-
-        .minus-button{
-        border: 1pt solid gray;
-        border-radius: 8px;
-        width: 20px;
-        height: 20px;
-        text-align: center;
-      }
-
-      .verticle-arrow{
-            width: 0;
-            height: 0;
-             border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-  
-            border-top: 20px solid blue;
-      }
-
-
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .left-section,
-      .right-section {
-        width: 90%;
-        padding: 10px;
-      }
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <div class="left-section">
-    <h1>Edit team color styles</h1>
-    <p>Published styles are shared with everyone on the team—they can be used by all team members in any of their files. Changing
-      these styles will update them everywhere they're used.</p>
-    <p>Change these default colors to your team's colors by selecting a color layer and clicking on <span style="font-size: 1.2em;">&#9883;</span> in the Design panel to the right.</p>
+    <div class="container">
+        <h1>Edit team color styles</h1>
+        <p>Published styles are shared with everyone on the team—they can be used by all team members in any of their files. Changing these styles will update them everywhere they're used.</p>
+        <p>Change these default colors to your team's colors by selecting a color layer and clicking on ↕ in the Design panel to the right.</p>
 
-    <div class="layer-panel">
-      <div class="layer-panel-header">Layer</div>
-      <div class="layer-panel-body">
-        <div class="layer-item">
-          <div class="layer-name">
-             <div class="layer-group">
-                <span style="font-size: 0.8em;">&#9702;</span>
-                <span>Pass through</span>
-                  <select>
-                       <option>Normal</option>
-                  </select>
-             </div>
-          </div>
-          <div class="layer-options">
-            <input type="number" value="100" style="width: 40px;"> % 
-            <span style="font-size: 0.8em">&#x1F441;</span>
-          </div>
+        <div class="layer-panel">
+            <div class="layer-header">
+                <h3>Layer</h3>
+            </div>
+            <div class="layer-section">
+                <div class="layer-row">
+                    <span>O</span>
+                    <span>Pass through</span>
+                    <span>▼</span>
+                    <span>100%</span>
+                    <span>👁</span>
+                </div>
+            </div>
+            <div class="layer-section">
+                <div class="layer-row">
+                    <span class="color-circle" style="background-color: fuchsia;"></span>
+                    <span>Fuschia/100</span>
+                    <span>↕</span>
+                    <span>...</span>
+                    <span>-</span>
+                </div>
+            </div>
+            <div class="layer-section">
+                <div class="layer-row">
+                    <span>Stroke</span>
+                    <span class="add-button">+</span>
+                </div>
+            </div>
+            <div class="layer-section">
+                <div class="layer-row">
+                    <span>Effects</span>
+                    <span class="add-button">+</span>
+                </div>
+            </div>
+            <div class="layer-section">
+                <div class="layer-row">
+                    <span>Export</span>
+                    <span class="add-button">+</span>
+                </div>
+            </div>
         </div>
-
-        <div class="layer-item">
-          <div class="layer-name">
-              <div class="layer-group">
-                 <span style="color: fuchsia; font-size: 1.5em;">&#11044;</span>
-                 <span>Fuschia/100</span>
-              </div>
-          </div>
-          <div class="layer-options">
-              <div class="action-button">
-                <span style="font-size: 1.2em;">&#9883;</span>
-              </div>
-               <span class="minus-button">&#45;</span>
-          </div>
-        </div>
-
-          <div class="footer-item">
-            <div>Stroke</div>
-            <div class="plus-button">+</div>
-          </div>
-
-             <div class="footer-item">
-            <div >Effects</div>
-            <div class="plus-button">+</div>
-          </div>
-
-           <div class="footer-item">
-            <div>Export</div>
-            <div class="plus-button">+</div>
-          </div>
-      </div>
     </div>
-  </div>
 
-  <div class="right-section">
-    <p style="font-size: 1.2em">We're published already!</p>
-    <p style="font-size: 1.2em">Edit us to be your team's colors.</p>
-    <div class="verticle-arrow"></div>
-  </div>
+    <div class="right-panel">
+        <h2>We're published already!
+            Edit us to be your team's colors.</h2>
+        <div class="arrow-down">
+            ↓
+        </div>
+    </div>
 </body>
 </html>
 ```

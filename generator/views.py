@@ -2,7 +2,8 @@ import os
 import requests # type: ignore
 from django.shortcuts import render # type: ignore
 from .zeplin import get_image_from_url
-from .ai import generate_code   # <-- your real function
+from .ai import generate_code 
+
 
 OUTPUT = "output"
 os.makedirs(OUTPUT, exist_ok=True)
@@ -50,6 +51,13 @@ Here is the current HTML code:
 
 User wants these changes:
 {instruction}
+
+You are not allowed to modify:
+- Layout structure
+- Element order
+- Class names
+
+You can only update styles.
 
 Update the HTML accordingly.
 Return full updated code only.
